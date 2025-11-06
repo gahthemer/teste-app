@@ -1,8 +1,12 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
+import router from "./routes/taskRoutes";
 
 const app = express();
-app.use(express.json)
+app.use(express.json());
+app.use("/task",router);
+
+
 
 
 /* app.get("/parametro/:nome",(req:Request,res:Response,next:NextFunction)=>{
