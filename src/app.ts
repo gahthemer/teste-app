@@ -2,10 +2,10 @@ import express from "express";
 import { Request, Response, NextFunction } from "express";
 
 const app = express();
-app.use(express.json())
+app.use(express.json)
 
 
-app.get("/parametro/:nome",(req:Request,res:Response,next:NextFunction)=>{
+/* app.get("/parametro/:nome",(req:Request,res:Response,next:NextFunction)=>{
     const nome = req.params.nome
     console.log("Rota de parametro - Cliente digitou:",nome)
     res.send(`voce digitou o nome ${nome}`)
@@ -35,6 +35,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use((err: Error, req: Request,res:Response, next: NextFunction) => {
   console.error(err);
   res.status(500).send("Erro na ...")
-});
+}); */
 
 export default app;
