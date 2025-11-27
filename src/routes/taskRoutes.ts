@@ -1,16 +1,16 @@
 import { Router } from "express";
 import taskControllers from "../controllers/taskControllers";
 
-const router = Router();
+const rotaTarefa = Router();
 
-router.get("/",taskControllers.getTarefas)
+rotaTarefa.get("/",taskControllers.getTarefas)
 
-router.get("/:id",taskControllers.getTarefa)
+rotaTarefa.get("/:id",taskControllers.getTarefa)
 
-router.post("/",taskControllers.criarTarefa)
+rotaTarefa.post("/",taskControllers.criarTarefa)
 
-router.put("/:id",taskControllers.atualizarTarefa)
+rotaTarefa.put("/:id",taskControllers.atualizarTarefa)
 
-router.delete("/:id",taskControllers.deletarTarefa)
+rotaTarefa.delete("/:id",taskControllers.deletarTarefa)
 
-export default router;
+export default rotaTarefa;

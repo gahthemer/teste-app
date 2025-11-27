@@ -1,10 +1,10 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
-import router from "./routes/taskRoutes";
+import rotaTarefa from "./routes/taskRoutes";
 
 const app = express();
 app.use(express.json());
-app.use("/task",router);
+app.use("/task",rotaTarefa);
 
 
 
