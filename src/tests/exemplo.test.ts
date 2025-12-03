@@ -4,7 +4,7 @@
     expect(res.status).toBe(200)
 
     const body = await res.json()
-    expect(Array.isArray(body)).toBe(true)
+    expect(Array.isArray(body)).toBe(true) 
   })
 
-  
+
