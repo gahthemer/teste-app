@@ -1,9 +1,10 @@
-  test("exemplo", ()=>{
-    const nome = "teste da silva"
-    expect(nome).toBe("teste da silva sauro")
+  
+  test("GET: /tarefas = 200", async ()=>{
+    const res = await fetch("http://localhost:3000/task/")
+    expect(res.status).toBe(200)
+
+    const body = await res.json()
+    expect(Array.isArray(body)).toBe(true)
   })
 
-    test("exemplo2", ()=>{
-    const result = 5+5;
-    expect(result).toBe(10)
-  })
+  
