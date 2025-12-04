@@ -72,7 +72,14 @@ test("DELETE: /task/:id = 204",async()=>{
 
 })
 
-test("Post: /task = 400 (Erro Criar tarefa)",async()=>{
+// ------------ Testes para erros
+
+test("GET: /tarefas/id == 404", async()=>{
+  const res = await fetch(`${URL_base}/999999999`)
+  expect(res.status).toBe(404);
+})
+
+test("POST: /task = 400 (Erro Criar tarefa)",async()=>{
   const res = await fetch(URL_base,{
     method:"POST",
     headers: {"Content-Type":"application/json"},
