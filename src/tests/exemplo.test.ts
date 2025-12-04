@@ -1,3 +1,6 @@
+import { error } from "console";
+import { json } from "stream/consumers";
+
   
 const URL_base = "http://localhost:3000/task"
 
@@ -67,6 +70,18 @@ test("DELETE: /task/:id = 204",async()=>{
   expect(content).toHaveProperty("nome")
   expect(content).toHaveProperty("descricao")
 
+})
+
+test("Post: /task = 400 (Erro Criar tarefa)",async()=>{
+  const res = await fetch(URL_base,{
+    method:"POST",
+    headers: {"Content-Type":"application/json"},
+    body:JSON.stringify({})
+  })
+  expect(res.status).toBe(400);
+
+  const content = await res.json()
+  expect(content).toHaveProperty("erro","dados invalidos")
 })
 
 
