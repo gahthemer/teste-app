@@ -4,7 +4,7 @@ import { error } from "console";
 import { validarSenha } from "../utils/senha";
 import { createJWT } from "../utils/jwt";
 
-async function Login(req:Request, res:Response, next:NextFunction){
+async function Client(req:Request, res:Response, next:NextFunction){
   const{email,senha}=req.body;
 
   if(!email || !senha){
@@ -34,5 +34,5 @@ async function Login(req:Request, res:Response, next:NextFunction){
 }
 
 export default {
-  Login
+  Client
 };

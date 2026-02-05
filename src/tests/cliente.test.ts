@@ -1,16 +1,19 @@
 import { json } from "stream/consumers";
 
-const URL_BASi: string = "http://localhost:3000/api/login";
+const URL_BASe: string = "http://localhost:3000/api/Client";
 
-let login_id: number = 0
+let client_id: number = 0
 
 const criar = {
-    email: "Neymar@gmail",
-    senha: "Eutentei"
+    nome:"Pikachu",
+    email: "Pikachu@gmail",
+    telefone: "151",
+    cpf:"251",
+    senha: "choque"
 }
 
-test("POST: /login = 201(Criar login)", async()=>{
-    const res = await fetch(URL_BASi, {
+test("POST: /Client = 201(Criar Client)", async()=>{
+    const res = await fetch(URL_BASe, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(criar)
