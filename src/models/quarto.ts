@@ -1,17 +1,17 @@
 import { RowDataPacket } from "mysql2";
 
 export type Quartos = RowDataPacket &{
-    id:number
-    nome:string
-    numero:number
-    qnt_cama_casal:number
-    qnt_cama_solteiro:number
-    preco:number
-    disponivel:number
+    id: number
+    nome: string
+    numero: number
+    qtd_cama_casal: number
+    qtd_cama_solteiro: number
+    preco: number
+    disponivel: number
 }
 
-export type QuartosReserva = {
-    dataInicio:
-    Datafim:
-    quantidade:
+export type QuartoReserva = {
+    dataInicio: string
+    dataFim: string
+    quantidade: string
 }

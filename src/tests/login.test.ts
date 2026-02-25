@@ -1,26 +1,46 @@
-import { json } from "stream/consumers";
-
-const URL_BASi: string = "http://localhost:3000/api/login";
-
-let login_id: number = 0
-
-const criar = {
-    email: "Neymar@gmail",
-    senha: "Eutentei"
-}
-
-test("POST: /login = 201(Criar login)", async()=>{
-    const res = await fetch(URL_BASi, {
+const url_base:string = "http://localhost:3000/api/login";
+ 
+test("POST / login = 200", async () => {
+    const res = await fetch(url_base, {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(criar)
-    })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            email: "Neymar@gmail",
+            senha: "Eutentei"}
+        )
+    });
     expect(res.status).toBe(200);
+    const json = await res.json()
+    // console.log(json);
+});
 
-     const json = await res.json()
-     console.log(json);
-    // login_id = content.id
-    // expect(content).toHaveProperty("id")
-    // expect(content).toHaveProperty("email")
-    // expect(content).toHaveProperty("senha")
-})
+
+test("POST / login(sem senha) = 400", async () => {
+    const res = await fetch(url_base, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            email: "teste@email.com",
+            senha: ""}
+        )
+    });
+    expect(res.status).toBe(400);
+});
+
+
+test("POST / create = 200", async () => {
+    const res = await fetch(url_base + "/cadastro" , {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            nome: "nomeTeste",
+            email: "teste@email.com",
+            senha: "senha123",
+            telefone: "157070-7070",
+            cpf:"123456789-55"
+        })
+    });
+    expect(res.status).toBe(200);
+    const token = await res.json();
+    // console.log(token)
+});
