@@ -1,12 +1,10 @@
-
-
 test("POST: /api/quartosDisponiveis = 200", async()=>{
-    const resp = await fetch("https://teste-app-nu.vercel.app/api/quartosDisponiveis",{
+    const resp = await fetch("http://localhost:3000/api/quartosDisponiveis",{
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            inicio:"2026/02/19",
-            fim:"2026/02/20",
+            inicio:"2026/05/18",
+            fim:"2026/07/20",
             quantidade:1
         })
     });

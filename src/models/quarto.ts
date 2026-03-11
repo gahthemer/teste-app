@@ -11,7 +11,7 @@ export type Quartos = RowDataPacket &{
 }
 
 export type QuartoReserva = {
-    dataInicio: string
-    dataFim: string
+    inicio: string
+    fim: string
     quantidade: string
 }
